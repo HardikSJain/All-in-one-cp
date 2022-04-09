@@ -24,7 +24,9 @@
 
 <body>
     
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 100px">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 75px">
+        
+        
         
         <div class="container-fluid">
             <a class="navbar-brand fs-3 mx-3" href="/">AllInOneCP</a>
@@ -34,23 +36,43 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             {% if request.user.is_authenticated %}
-       <ul class="navbar-nav me-auto mb-2 mb-lg-0 " style="padding-left:71%;">
-       <b> <li class="nav-item" >
-        <a class="nav-link" href="#"  style="font-size:x-large">Welcome,{{request.user}}</a>
-        </li></b>
-     <b> <li class="nav-item" >
-          <a class="nav-link" href="/logout" style="font-size:x-large">Logout</a>
-        </li></b>
-      </ul>
-      {% else %}
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 " style="padding-left:85%;">
-        <b><li class="nav-item" >
-        <a class="nav-link" href="/login" style="font-size:x-large">Login</a>
-        </li></b>
-       
-      </ul>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link fs-2 px-1" href="daily_coding">Coding</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <b>
+                                <li class="nav-item">
+                                    <a class="nav-link fs-4" href="/profile">Hello, {{request.user}}</a>
+                                </li>
+                            </b>
+                            <button type="button" class="btn btn-outline-danger mx-4">
+                                LogOut
+                            </button>
+                        </ul>
+                    </form>
+                </div>
+            {% else %}
+                <form class="d-flex">
 
-      {% endif %}
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <b>
+                            <li class="nav-item">
+                                <a class="nav-link fs-4 mx-4" href="/login">Login</a>
+                            </li>
+                        </b>
+                        <!-- <b>
+                            <li class="nav-item">
+                                <a class="nav-link fs-4" href="/register">Register</a>
+                            </li>
+                        </b> -->
+                        
+                    </ul>
+                </form>
+            {% endif %}
 
         </div>
     </nav>
