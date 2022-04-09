@@ -29,230 +29,71 @@
 
 <body>
 
-    <header>
 
 
 
 
-
-        <main>
-            <section class="left-sec">
-                <h2 data-aos="fade-right" data-aos-easing="ease-in"> Don't know where to start your competetive
-                    programming journey from ?</h2>
-                <br>
-                <h1 data-aos="fade-right" data-aos-easing="ease-in"> No worries, we got you covered, a site to manage
-                    all your competetive platforms and will also remind you to solve a question each day.</h1>
-                <br>
-                <p data-aos="fade-right" data-aos-easing="ease-in">A question a day, keeps you _____</p>
-                <br>
-                <br>
-                <!-- <button type="button" data-aos="fade-right">
-            Start Your Coding Journey
-            </button> -->
-                <button type="button" data-aos="fade-right" class="btn btn-outline-info" style="padding: 17px;"
-                    onclick="location.href='/login';">Start Your Coding Journey</button>
-            </section>
-
-            <section class="right-sec" data-aos="fade-left" data-aos-easing="ease-in">
-                <figure>
-                    <img src="https://d3kqdc25i4tl0t.cloudfront.net/articles/content/543_378726_tech.hero.jpg"
-                        style="height: 450px; margin-top: 75px; border-radius: 10%;">
-                </figure>
-            </section>
-        </main>
-
-    </header>
-
-
-    </section>
-
-    <!-- style="height: auto; min-height: 100%;" -->
-
-
+    <div class="grid-container black">
+        <div class="left">
+            <b>Don't Know Where To Start Your Competitive Programming Journey From?</b>
+            <br>
+            <br>
+            <p>No Worries, We Got You Covered, A Site To Manage All Your Competitve Platforms And Will Also Remind You
+                To
+                Solve A Question Each Day</p>
+            <br>
+            <a href="/login"><button type="button" class="btn btn-outline-info button">Get Started With
+                    Coding</button></a>
+        </div>
+        <div class="right">
+            <img id="image_size" src="https://d3kqdc25i4tl0t.cloudfront.net/articles/content/543_378726_tech.hero.jpg"
+                alt="">
+        </div>
+    </div>
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Josefin Sans', sans-serif;
-        }
-
-        header {
-            width: 100%;
-            height: 100vh;
-            background-image: url('abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner.jpg');
-            /* background-repeat: repeat-y; */
-            background-size: 100% 100%;
-
-        }
-
-
-        main {
-
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            /* align-items: center; */
-            padding-top: 80px;
+        .black {
             background-color: black;
+            height: 89vh;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+        }
+
+        .left {
             height: 100%;
+            width: 726px;
+            padding: 100px 100px;
         }
 
-        main .right-sec {
-            padding-right: 70px;
-        }
-
-        main .left-sec {
-            padding-left: 100px;
-            padding-right: 225px;
-        }
-
-
-        .left-sec h2 {
+        .left b {
+            font-family: 'Josefin Sans', sans-serif;
             font-size: 30px;
-            text-transform: capitalize;
-            font-weight: lighter;
-            color: #ffffff;
-            margin-top: 100px;
+            color: white;
         }
 
-        .left-sec h1 {
-            font-size: 38px;
-            text-transform: capitalize;
-            color: #ffffff;
-
-            font-weight: 700;
-            margin: 15px 0;
+        .left p {
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 20px;
+            color: white;
         }
 
-        .left-sec p {
-            margin-bottom: 25px;
-            font-size: 30px;
-            color: #ffffff;
-
+        .right {
+            height: 100%;
+            width: 616px;
+            padding-top: 100px;
         }
 
-        /* .left-sec button{
-     padding: 15px 45px;
-     text-align: center;
-     font-size: 14px;
-     color: #fff;
-     border: none;
-     background-image: linear-gradient(to right,#649bff,#0070fa,#649bff);
-     border-radius: 10px;
-    } */
-
-        .coutr-box {
-            font-size: 80px;
-            font-weight: 900;
-            font-family: Heebo, sans-serif;
-            color: #1277ca;
-            text-transform: uppercase;
-            line-height: 180px;
-            text-align: center;
-            line-height: 100px;
-            padding-top: 39px;
-            padding-bottom: 39px
+        #image_size {
+            height: 350px;
+            width: 616px;
+            border-radius: 100%;
         }
 
-        .coutr-box span {
-            display: inline-block;
-            font-size: 14px;
-            line-height: normal;
-            margin-left: 0;
-            text-align: left;
-            display: block;
-            text-align: center
-        }
-
-        .coutr-box b {
-            text-transform: lowercase;
-            font-weight: 900
-        }
-
-        .section2 {
-            padding: 0 40px 70px
-        }
-
-
-
-        .row {
-            padding-top: 50px;
-        }
-
-        .wrapper h1 {
-            color: #dd4040;
-            font-size: 70px;
+        .button {
+            padding: 10px;
         }
     </style>
-
-</body>
-<script>
-    AOS.init();
-</script>
-
-</html>
-
-<div class="grid-container black">
-    <div class="left">
-        <b>Don't Know Where To Start Your Competitive Programming Journey From?</b>
-        <br>
-        <br>
-        <p>No Worries, We Got You Covered, A Site To Manage All Your Competitve Platforms And Will Also Remind You To
-            Solve A Question Each Day</p>
-        <br>
-        <a href="/login"><button type="button" class="btn btn-outline-info button">Get Started With Coding</button></a>
-    </div>
-    <div class="right">
-        <img id="image_size" src="https://d3kqdc25i4tl0t.cloudfront.net/articles/content/543_378726_tech.hero.jpg"
-            alt="">
-    </div>
-</div>
-
-<style>
-    .black {
-        background-color: black;
-        height: 89vh;
-    }
-
-    .grid-container {
-        display: grid;
-        grid-template-columns: auto auto auto;
-    }
-
-    .left {
-        height: 100%;
-        width: 726px;
-        padding: 100px 100px;
-    }
-
-    .left b {
-        font-family: 'Josefin Sans', sans-serif;
-        font-size: 30px;
-        color: white;
-    }
-
-    .left p {
-        font-family: 'Josefin Sans', sans-serif;
-        font-size: 20px;
-        color: white;
-    }
-
-    .right {
-        height: 100%;
-        width: 616px;
-        padding-top: 100px;
-    }
-
-    #image_size {
-        height: 350px;
-        width: 616px;
-        border-radius: 100%;
-    }
-
-    .button {
-        padding: 10px;
-    }
-</style>
-{% endblock body %}
+    {% endblock body %}
