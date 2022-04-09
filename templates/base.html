@@ -23,8 +23,6 @@
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 100px">
         
-        
-        
         <div class="container-fluid">
             <a class="navbar-brand fs-3 mx-3" href="/">AllInOneCP</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -39,7 +37,7 @@
                             <a class="nav-link fs-2 px-1" href="daily_coding">Coding</a>
                         </li>
                     </ul>
-                    <form class="d-flex">
+                    {% comment %} <form class="d-flex"> {% endcomment %}
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <b>
                                 <li class="nav-item">
@@ -50,10 +48,10 @@
                                 LogOut
                             </button>
                         </ul>
-                    </form>
+                    {% comment %} </form> {% endcomment %}
                 </div>
             {% else %}
-                <form class="d-flex">
+                {% comment %} <form class="d-flex"> {% endcomment %}
 
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <b>
@@ -68,7 +66,7 @@
                         </b>
                         
                     </ul>
-                </form>
+                {% comment %} </form> {% endcomment %}
             {% endif %}
 
         </div>

@@ -15,6 +15,10 @@ urlpatterns = [
     path('interviewbit', views.interviewbit, name="interviewbit_stats"),
     path('atcoder', views.atcoder, name="atcoder_stats"),
     path('explore_problems', views.explore_problems, name="problems"),
+    path('explore_problems_codeforces',
+         views.explore_problems_codeforces, name="problems_codeforces"),
+    path('explore_problems_atcoder',
+         views.explore_problems_atcoder, name="problems_atcoder"),
     path('daily_coding', views.daily_coding, name="daily_coding"),
     path('problem_of_the_day', views.problem_of_the_day, name="probken_of_the_day"),
 

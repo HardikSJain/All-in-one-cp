@@ -75,7 +75,8 @@ def profile(request):
     return render(request, 'profile.html')
 
 
-def leetcode(request, username):
+def leetcode(request):
+    username = get_user(request)
     l_username = platform_details.objects.raw(
         'select Leetcode_username from all_in_one_cp_platform_details where username= %s ', [username])
     for p in l_username:
@@ -85,7 +86,8 @@ def leetcode(request, username):
     return redirect(request, '/profile', {'response_leetcode': response})
 
 
-def codeforces(request, username):
+def codeforces(request):
+    username = get_user(request)
     c_username = platform_details.objects.raw(
         'select Codeforces_username from all_in_one_cp_platform_details where username= %s ', [username])
     for p in c_username:
@@ -95,7 +97,8 @@ def codeforces(request, username):
     return redirect(request, '/profile', {'response_codeforces': response})
 
 
-def SPOJ(request, username):
+def SPOJ(request):
+    username = get_user(request)
     s_username = platform_details.objects.raw(
         'select SPOJ_username from all_in_one_cp_platform_details where username= %s ', [username])
     for p in s_username:
@@ -105,7 +108,8 @@ def SPOJ(request, username):
     return redirect(request, '/profile', {'response_spoj': response})
 
 
-def interviewbit(request, username):
+def interviewbit(request):
+    username = get_user(request)
     i_username = platform_details.objects.raw(
         'select Interviewbit_username from all_in_one_cp_platform_details where username= %s ', [username])
     for p in i_username:
@@ -115,7 +119,8 @@ def interviewbit(request, username):
     return redirect(request, '/profile', {'response_interviewbit': response})
 
 
-def atcoder(request, username):
+def atcoder(request):
+    username = get_user(request)
     a_username = platform_details.objects.raw(
         'select Atcoder_username from all_in_one_cp_platform_details where username= %s ', [username])
     for p in a_username:
@@ -126,8 +131,26 @@ def atcoder(request, username):
 
 
 def explore_problems(request):
+    response = requests.get("https://leetcode.com/api/problems/all/").json()
+    list1 = []
+    list1.append(response)
+    return render(request, 'random_problems.html', {'leetcode_problems': list1})
 
-    return render(request, 'random_problems.html')
+
+def explore_problems_codeforces(request):
+    response = requests.get(
+        "https://codeforces.com/api/problemset.problems?tags=implementation").json()
+    list1 = []
+    list1.append(response)
+    return render(request, 'random_problems.html', {'codeforces_problems': list1})
+
+
+def explore_problems_atcoder(request):
+    response = requests.get(
+        "https://kenkoooo.com/atcoder/resources/problems.json").json()
+    list1 = []
+    list1.append(response)
+    return render(request, 'random_problems.html', {'atcoder_problems': list1})
 
 
 def daily_coding(request):
