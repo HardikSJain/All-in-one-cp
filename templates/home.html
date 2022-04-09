@@ -193,4 +193,66 @@
 </script>
 
 </html>
+
+<div class="grid-container black">
+    <div class="left">
+        <b>Don't Know Where To Start Your Competitive Programming Journey From?</b>
+        <br>
+        <br>
+        <p>No Worries, We Got You Covered, A Site To Manage All Your Competitve Platforms And Will Also Remind You To
+            Solve A Question Each Day</p>
+        <br>
+        <a href="/login"><button type="button" class="btn btn-outline-info button">Get Started With Coding</button></a>
+    </div>
+    <div class="right">
+        <img id="image_size" src="https://d3kqdc25i4tl0t.cloudfront.net/articles/content/543_378726_tech.hero.jpg"
+            alt="">
+    </div>
+</div>
+
+<style>
+    .black {
+        background-color: black;
+        height: 89vh;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+
+    .left {
+        height: 100%;
+        width: 726px;
+        padding: 100px 100px;
+    }
+
+    .left b {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 30px;
+        color: white;
+    }
+
+    .left p {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 20px;
+        color: white;
+    }
+
+    .right {
+        height: 100%;
+        width: 616px;
+        padding-top: 100px;
+    }
+
+    #image_size {
+        height: 350px;
+        width: 616px;
+        border-radius: 100%;
+    }
+
+    .button {
+        padding: 10px;
+    }
+</style>
 {% endblock body %}
