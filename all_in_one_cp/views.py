@@ -11,27 +11,20 @@ def home(request):
     return render(request, 'home.html')
 
 
-def login(request):
+def loginuser(request):
     if request.method == "POST":
-        username = request.POST.get("username")
-        password = request.POST.get("password")
-        login = user_details.objects.raw(
-            'select username,password from all_in_one_cp_user_details where username= %s ', [username])
-        for p in login:
-            if p.username == username and p.password == password:
-                messages.success(
-                    request, "Logged in successfully as "+username)
-                return redirect('/explore_problems')
-            else:
-                messages.warning(
-                    request, "Invalid Password!!")
-                return redirect('/login')
-        else:
-            messages.warning(
-                request, "No such username exists!!")
-            return redirect('/login')
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
 
-    return render(request, 'login.html')
+        if user is not None:
+            login(request, user)
+            return redirect('/explore_problems')
+        else:
+            messages.info(request, 'invalid username or password')
+            return redirect("/login")
+    else:
+        return render(request, 'login.html')
 
 
 def register(request):
