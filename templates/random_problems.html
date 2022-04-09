@@ -12,16 +12,52 @@
 </div>
 {% endfor %}
 {% endif %}
-{% for i in codeforces_problems %}
-{% for j in i.result.problems %}
-<strong> {{j.contestId}}</strong><br>
-{%endfor%}
+
+
+{% for m in responsedata.stat_status_pairs %}
+{% for j,l in m.stat.items%}
+    {% if j == "question_id" %}
+        <strong> {{ l }}</strong>
+    {% endif %}
+    {% if j == "question__title"  %}
+
+    {% for k,n in m.stat.items%}
+    {% if k == "question__title_slug" %}
+    
+    
+    
+        <strong> <a href="https://leetcode.com/problems/{{n}}/" target="__blank">{{ l }}</a></strong><br>
+        {% endif %}
+        {% endfor %}
+    {% endif%}
+
 {% endfor %}
+{% endfor %}
+
 
 {% comment %} {% for i in codeforces_problems %}
 {% for j in i.result.problems %}
-<strong> {{j.contestId}}</strong><br>
+<strong> {{j.contestId}} </strong>
+
+<strong> <a href="https://codeforces.com/problemset/problem/{{j.contestId}}/{{j.index}}" target="__blank">{{j.name}} </a></strong>
+<strong> {{j.type}} </strong>
+<br>
+
 {%endfor%}
-{% endfor %} {% endcomment %}
+{% endfor %}  {% endcomment %}
+
+
+ {% comment %} {% for i in atcoder_problems %}
+
+<strong> {{i.id}} </strong>
+<strong> {{i.contest_id}} </strong>
+<strong> <a href="https://atcoder.jp/contests/{{i.contest_id}}/tasks/{{i.id}}" target="__blank">{{i.title}} </a></strong>
+
+<br>
+
+{% endfor %}  {% endcomment %}
+
+
+
 
 {% endblock body %}

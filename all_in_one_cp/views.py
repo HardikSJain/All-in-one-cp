@@ -20,10 +20,10 @@ def loginuser(request):
         if user is not None:
             login(request, user)
             messages.success(request, 'Logged in Successfully as '+username)
-            return redirect('/explore_problems_codeforces')
+            return redirect('/explore_problems')
 
         else:
-            messages.info(request, 'invalid username or password')
+            messages.warning(request, 'invalid username or password')
             return redirect("/login")
     else:
         return render(request, 'login.html')
@@ -134,11 +134,9 @@ def atcoder(request):
 
 
 def explore_problems(request):
-    response = requests.get(
+    responsedata = requests.get(
         "https://leetcode.com/api/problems/algorithms/").json()
-    list1 = []
-    list1.append(response)
-    return render(request, 'random_problems.html', {'leetcode_problems': list1})
+    return render(request, 'random_problems.html', {'responsedata': responsedata})
 
 
 def explore_problems_codeforces(request):
@@ -152,9 +150,9 @@ def explore_problems_codeforces(request):
 def explore_problems_atcoder(request):
     response = requests.get(
         "https://kenkoooo.com/atcoder/resources/problems.json").json()
-    list3 = []
-    list3.append(response)
-    return render(request, 'random_problems.html', {'atcoder_problems': list3})
+    # list3 = []
+    # list3.append(response)
+    return render(request, 'random_problems.html', {'atcoder_problems': response})
 
 
 def daily_coding(request):
