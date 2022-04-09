@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render, HttpResponse
 from django.contrib.auth.models import User
+from django.urls import reverse
 from all_in_one_cp.models import user_details, platform_details
 from django.contrib import messages
 from django.contrib.auth import authenticate, get_user, login, logout
@@ -12,38 +13,45 @@ def home(request):
 
 def login(request):
     if request.method == "POST":
-        username = request.POST.get("")
-        password = request.POST.get("")
-        user = authenticate(username=username, password=password)
-        if user is not None:
-            login(request, user)
-            messages.success(
-                request, 'Your are logged in successfully'+username)
-            return redirect("/explore_problems", username)
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+        login = user_details.objects.raw(
+            'select username,password from all_in_one_cp_user_details where username= %s ', [username])
+        for p in login:
+            if p.username == username and p.password == password:
+                messages.success(
+                    request, "Logged in successfully as "+username)
+                return redirect('/explore_problems')
+            else:
+                messages.warning(
+                    request, "Invalid Password!!")
+                return redirect('/login')
         else:
-            messages.warning(request, 'Invalid username or password')
-            return redirect("/login")
+            messages.warning(
+                request, "No such username exists!!")
+            return redirect('/login')
 
     return render(request, 'login.html')
 
 
 def register(request):
     if request.method == "POST":
-        name = request.POST.get("")
-        username = request.POST.get("")
-        leetcode = request.POST.get("")
-        codeforces = request.POST.get("")
-        spoj = request.POST.get("")
-        interviewbit = request.POST.get("")
-        atcoder = request.POST.get("")
-        password = request.POST.get("")
-        cpassword = request.POST.get("")
+        name = request.POST.get("fullname")
+        username = request.POST.get("username")
+        email = request.POST.get("email")
+        leetcode = request.POST.get("leetcode")
+        codeforces = request.POST.get("codeforces")
+        spoj = request.POST.get("spoj")
+        interviewbit = request.POST.get("interviewbit")
+        atcoder = request.POST.get("atcoder")
+        password = request.POST.get("password")
+        cpassword = request.POST.get("confirmpassword")
 
         if(len(username) <= 25 and password == cpassword):
             user = User.objects.create_user(
                 first_name=name, username=username, password=password)
             userdata = user_details(
-                name=name, username=username, password=password)
+                name=name, username=username, password=password, email=email)
             platform_usernames = platform_details(username=username, Leetcode_username=leetcode, Codeforces_username=codeforces,
                                                   SPOJ_username=spoj, Interviewbit_username=interviewbit, Atcoder_username=atcoder)
 
@@ -56,13 +64,13 @@ def register(request):
         elif len(username) > 25:
             messages.warning(
                 request, 'Username Length Should be less than 25!')
-            return redirect("/register")
+            return redirect("/login")
         elif password != cpassword:
             messages.warning(
                 request, 'Entered Password do not match')
-            return redirect("/register")
+            return redirect('/login'+'#signup')
 
-    return render(request, 'register.html')
+    return render(request, 'login.html')
 
 
 def logoutUser(request):
