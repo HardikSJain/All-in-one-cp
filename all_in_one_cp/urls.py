@@ -5,4 +5,6 @@ from all_in_one_cp import views
 urlpatterns = [
 
     path('', views.index, name="home"),
+
+
 ]

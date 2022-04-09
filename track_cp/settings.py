@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+
     'all_in_one_cp.apps.AllInOneCpConfig',
     'django.contrib.admin',
     'django.contrib.auth',
