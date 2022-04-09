@@ -46,8 +46,12 @@
                     Coding</button></a>
         </div>
         <div class="right">
-            <img id="image_size" src="https://d3kqdc25i4tl0t.cloudfront.net/articles/content/543_378726_tech.hero.jpg"
-                alt="">
+            <!-- <img id="image_size" src="https://d3kqdc25i4tl0t.cloudfront.net/articles/content/543_378726_tech.hero.jpg"
+                alt=""> -->
+            <span class="Sphere"></span>
+
+            <!-- Including the TagCloud.js script CDN in the document    -->
+            <script src="https://cdn.jsdelivr.net/npm/TagCloud@2.2.0/dist/TagCloud.min.js"> </script>
         </div>
     </div>
 
@@ -95,5 +99,62 @@
         .button {
             padding: 10px;
         }
+
+        /* SPHERE */
+
+        /*     Importing Google fonts    */
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+        body {
+            background-color: #000;
+        }
+
+        /* Applying CSS to sphere */
+        .tagcloud {
+            display: inline-block;
+            top: -80px;
+            left: 15%;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 20px;
+        }
+
+        /* Change color of each text in sphere on hover   */
+        .tagcloud--item:hover {
+            color: #FFC300;
+        }
     </style>
+
+    <script>
+        const Texts = [
+            'HTML', 'CSS', 'JAVASCRIPT',
+            'SWIFT', 'MONGOOSE', 'REACT',
+            'PYTHON', 'SASS',
+            'DJANGO', 'NODEJS', 'MONGODB',
+            'EXPRESS', 'MYSQL', 'JQUERY', 'JAVA'
+        ];
+
+        var tagCloud = TagCloud('.Sphere', Texts, {
+
+            // Sphere radius in px
+            radius: 230,
+
+            // animation speed
+            // slow, normal, fast
+            maxSpeed: 'normal',
+            initSpeed: 'fast',
+
+            // Rolling direction [0 (top) , 90 (left), 135 (right-bottom)] 
+            direction: 135,
+
+            // interaction with mouse or not [Default true (decelerate to rolling init speed, and keep rolling with mouse).]
+            keep: true
+
+        });
+
+        // Giving color to each text in sphere
+        var color = '#01bbf6 ';
+        document.querySelector('.Sphere').style.color = color;
+    </script>
     {% endblock body %}
