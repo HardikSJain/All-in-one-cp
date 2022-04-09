@@ -4,7 +4,320 @@
 
 {% block body %}
 
-{% if messages %}
+
+<div class="heading">
+    <h1>Explore Problems Randomly</h1>
+</div>
+
+
+<ul class="tab-bar">
+    <a data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false"
+        aria-controls="multiCollapseExample1">
+        <li data-num="1" class="tab wave dark">LeetCode</li>
+    </a>
+    <a data-bs-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false"
+        aria-controls="multiCollapseExample1">
+        <li data-num="2" class="tab wave dark">CodeChef</li>
+    </a>
+    <a data-bs-toggle="collapse" href="#multiCollapseExample3" role="button" aria-expanded="false"
+        aria-controls="multiCollapseExample1">
+        <li data-num="3" class="tab wave dark">CodeForces</li>
+    </a>
+    <a data-bs-toggle="collapse" href="#multiCollapseExample4" role="button" aria-expanded="false"
+        aria-controls="multiCollapseExample1">
+        <li data-num="4" class="tab wave dark">AtCoder</li>
+    </a>
+    <div class="indicator"></div>
+</ul>
+
+<!-- Collapse -->
+
+<!-- <p>
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button"
+        aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2"
+        aria-expanded="false" aria-controls="multiCollapseExample2">Toggle second element</button>
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse"
+        aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both elements</button>
+</p> -->
+<!-- <div class="row"> -->
+<div class="col">
+    <div class="collapse multi-collapse" id="multiCollapseExample1">
+        <div class="card card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th data-row-selection="true"></th>
+                        <th tabindex="0" style="width: 80px; color: lightcoral; font-size: 20px; text-align: center;">Q-Id</th>
+                        <th tabindex="0" style="font-size: 20px; color: lightcoral; text-align: center;">Questions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="selection-cell"><input type="checkbox" class=""></td>
+                        <td style="font-size: 20px; cursor: pointer; color: skyblue; text-align: center;">0</td>
+                        <td><a href="https://practice.geeksforgeeks.org/problems/reverse-an-array/0" target="_blank"
+                                rel="noopener noreferrer" class="question-link"
+                                style="font-weight: 600; color: skyblue; font-size: 20px;">Reverse the array</a>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="col">
+    <div class="collapse multi-collapse" id="multiCollapseExample2">
+        <div class="card card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th data-row-selection="true"></th>
+                        <th tabindex="0" style="width: 80px; color: lightcoral; font-size: 20px; text-align: center;">Q-Id</th>
+                        <th tabindex="0" style="font-size: 20px; color: lightcoral; text-align: center;">Questions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="selection-cell"><input type="checkbox" class=""></td>
+                        <td style="font-size: 20px; cursor: pointer; color: skyblue; text-align: center;">0</td>
+                        <td><a href="https://practice.geeksforgeeks.org/problems/reverse-an-array/0" target="_blank"
+                                rel="noopener noreferrer" class="question-link"
+                                style="font-weight: 600; color: skyblue; font-size: 20px;">Reverse the array</a>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+
+
+
+
+        </div>
+    </div>
+</div>
+<div class="col">
+    <div class="collapse multi-collapse" id="multiCollapseExample3">
+        <div class="card card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th data-row-selection="true"></th>
+                        <th tabindex="0" style="width: 80px; color: lightcoral; font-size: 20px; text-align: center;">Q-Id</th>
+                        <th tabindex="0" style="font-size: 20px; color: lightcoral; text-align: center;">Questions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="selection-cell"><input type="checkbox" class=""></td>
+                        <td style="font-size: 20px; cursor: pointer; color: skyblue; text-align: center;">0</td>
+                        <td><a href="https://practice.geeksforgeeks.org/problems/reverse-an-array/0" target="_blank"
+                                rel="noopener noreferrer" class="question-link"
+                                style="font-weight: 600; color: skyblue; font-size: 20px;">Reverse the array</a>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="col">
+    <div class="collapse multi-collapse" id="multiCollapseExample4">
+        <div class="card card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th data-row-selection="true"></th>
+                        <th tabindex="0" style="width: 80px; color: lightcoral; font-size: 20px; text-align: center;">Q-Id</th>
+                        <th tabindex="0" style="font-size: 20px; color: lightcoral; text-align: center;">Questions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="selection-cell"><input type="checkbox" class=""></td>
+                        <td style="font-size: 20px; cursor: pointer; color: skyblue; text-align: center;">0</td>
+                        <td><a href="https://practice.geeksforgeeks.org/problems/reverse-an-array/0" target="_blank"
+                                rel="noopener noreferrer" class="question-link"
+                                style="font-weight: 600; color: skyblue; font-size: 20px;">Reverse the array</a>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- </div> -->
+
+
+
+<style>
+    .heading {
+        color: white;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    @import url(https://fonts.googleapis.com/css?family=Roboto);
+    .card{
+        background-color: #000000;
+        border-radius: 2px;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        margin-bottom: 20px;
+        position: relative;
+        width: 100%;
+        font-family: 'Roboto', sans-serif;
+    }
+    a{
+        text-decoration: none;
+    }
+    body {
+        /* height: 100%; */
+        background: black;
+        /* overflow: hidden; */
+        font-family: 'Roboto', sans-serif;
+
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .tab-bar {
+        margin: 30px auto;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        list-style-type: none;
+        -webkit-padding-start: 0;
+
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    }
+
+    .tab {
+        width: 150px;
+        padding: 20px 0;
+        background: #212529;
+        color: #607D8B;
+        overflow: hidden;
+        text-align: center;
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        cursor: pointer;
+        position: relative;
+
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+    }
+
+    .indicator {
+        width: 150px;
+        height: 3px;
+        background: #2196F3;
+        position: absolute;
+        margin-top: 58px;
+        margin-left: 0;
+
+        -webkit-transition: margin 0.5s ease;
+
+        transition: margin 0.5s ease;
+    }
+
+    .cercle {
+        width: 0px;
+        height: 0px;
+        position: absolute;
+    }
+
+    .light .cercle {
+        background: white
+    }
+
+    .dark .cercle {
+        background: black
+    }
+
+    .anim {
+        opacity: 0.2;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+        -webkit-animation: touch 1.2s ease-out;
+        animation: touch 1.2s ease-out;
+    }
+
+    @-webkit-keyframes touch {
+        100% {
+            width: 600px;
+            height: 600px;
+            border-radius: 600px;
+            opacity: 0;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+            margin: -300px;
+        }
+    }
+
+    @keyframes touch {
+        100% {
+            width: 600px;
+            height: 600px;
+            border-radius: 600px;
+            opacity: 0;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+            margin: -300px;
+        }
+    }
+</style>
+
+
+<script>
+    var waveBtn = (function () {
+        'use strict';
+        var btn = document.querySelectorAll('.wave'),
+            tab = document.querySelector('.tab-bar'),
+            indicator = document.querySelector('.indicator'),
+            indi = 0;
+        indicator.style.marginLeft = indi + 'px';
+
+        for (var i = 0; i < btn.length; i++) {
+            btn[i].onmousedown = function (e) {
+                var newRound = document.createElement('div'), x, y;
+
+                newRound.className = 'cercle';
+                this.appendChild(newRound);
+
+                x = e.pageX - this.offsetLeft;
+                y = e.pageY - this.offsetTop;
+
+                newRound.style.left = x + "px";
+                newRound.style.top = y + "px";
+                newRound.className += " anim";
+
+                indicator.style.marginLeft = indi + (this.dataset.num - 1) * 150 + 'px';
+
+                setTimeout(function () {
+                    newRound.remove();
+                }, 1200);
+            };
+        }
+    }());
+</script>
+
+
+
+
+
+
+
+
+<!-- {% if messages %}
 {% for message in messages %}
 <div class="alert alert-{{ message.tags }} alert-dismissible fade show my-0" role="alert">
     <strong> {{ message }}</strong>
@@ -18,10 +331,10 @@
 {%endfor%}
 {% endfor %}
 
-{% comment %} {% for i in codeforces_problems %}
+{% for i in codeforces_problems %}
 {% for j in i.result.problems %}
 <strong> {{j.contestId}}</strong><br>
 {%endfor%}
-{% endfor %} {% endcomment %}
+{% endfor %} -->
 
 {% endblock body %}
