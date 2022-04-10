@@ -79,64 +79,50 @@ def profile(request):
 
 
 def leetcode(request):
-    username = get_user(request)
-    # for p in platform_details.objects.raw('select Leetcode_username from all_in_one_cp_platform_details where username= %s ', [username]):
-    #     leetcode_username = p
-
-    # print(leetcode_username)
-    # l_username = platform_details.objects.raw(
-    #     'select Leetcode_username from all_in_one_cp_platform_details where username= %s ', [username])
-
-    # for p in l_username:
-    #     leetcode_username = p.Leetcode_username
-
+    leetcode_username = request.POST.get("username_leetcode")
     response = requests.get(
-        f'https://competitive-coding-api.herokuapp.com/api/leetcode/paarthsoni').json()
+        f'https://competitive-coding-api.herokuapp.com/api/leetcode/{leetcode_username}').json()
     list1 = []
     list1.append(response)
     print(list1)
-    return redirect(request, '/profile', {'response_leetcode': list1})
+    return render(request, 'profile.html', {'response_leetcode': list1})
 
 
 def codeforces(request):
-    username = get_user(request)
-    c_username = platform_details.objects.raw(
-        'select Codeforces_username from all_in_one_cp_platform_details where username= %s ', [username])
-    for p in c_username:
-        codeforces_username = p.Codeforces_username
+    codeforces_username = request.POST.get("username_leetcode")
+    list1 = []
+    list1.append(response)
+    print(list1)
     response = requests.get(
         f"https://competitive-coding-api.herokuapp.com/api/codeforces/{codeforces_username}").json()
     return redirect(request, '/profile', {'response_codeforces': response})
 
 
 def SPOJ(request):
-    username = get_user(request)
-    s_username = platform_details.objects.raw(
-        'select SPOJ_username from all_in_one_cp_platform_details where username= %s ', [username])
-    for p in s_username:
-        spoj_username = p.SPOJ_username
+    spoj_username = request.POST.get("username_leetcode")
+    list1 = []
+    list1.append(response)
+    print(list1)
     response = requests.get(
         f"https://competitive-coding-api.herokuapp.com/api/spoj/{spoj_username}").json()
     return redirect(request, '/profile', {'response_spoj': response})
 
 
 def interviewbit(request):
-    username = get_user(request)
-    i_username = platform_details.objects.raw(
-        'select Interviewbit_username from all_in_one_cp_platform_details where username= %s ', [username])
-    for p in i_username:
-        interviewbit_username = p.Interviewbit_username
+    interviewbit_username = request.POST.get("username_leetcode")
+    list1 = []
+    list1.append(response)
+    print(list1)
     response = requests.get(
         f"https://competitive-coding-api.herokuapp.com/api/interviewbit/{interviewbit_username}").json()
     return redirect(request, '/profile', {'response_interviewbit': response})
 
 
 def atcoder(request):
-    username = get_user(request)
-    a_username = platform_details.objects.raw(
-        'select Atcoder_username from all_in_one_cp_platform_details where username= %s ', [username])
-    for p in a_username:
-        atcoder_username = p.Atcoder_username
+    atcoder_username = request.POST.get("username_leetcode")
+    list1 = []
+    list1.append(response)
+    print(list1)
     response = requests.get(
         f"https://competitive-coding-api.herokuapp.com/api/atcoder/{atcoder_username}").json()
     return redirect(request, '/profile', {'response_atcoder': response})
