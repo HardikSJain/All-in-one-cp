@@ -34,11 +34,6 @@ def register(request):
         name = request.POST.get("fullname")
         username = request.POST.get("username")
         email = request.POST.get("email")
-        leetcode = request.POST.get("leetcode")
-        codeforces = request.POST.get("codeforces")
-        spoj = request.POST.get("spoj")
-        interviewbit = request.POST.get("interviewbit")
-        atcoder = request.POST.get("atcoder")
         password = request.POST.get("password")
         cpassword = request.POST.get("confirmpassword")
 
@@ -47,12 +42,9 @@ def register(request):
                 first_name=name, username=username, password=password)
             userdata = user_details(
                 name=name, username=username, password=password, email=email)
-            platform_usernames = platform_details(username=username, Leetcode_username=leetcode, Codeforces_username=codeforces,
-                                                  SPOJ_username=spoj, Interviewbit_username=interviewbit, Atcoder_username=atcoder)
 
             user.save()
             userdata.save()
-            platform_usernames.save()
             messages.success(
                 request, 'Your account is created successfully with username: '+username)
             return redirect("/login")
