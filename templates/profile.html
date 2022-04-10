@@ -32,9 +32,10 @@
               </div>
               <div class="modal-body">
                 <p>Username:
-                  {% for i in username %}
+                  <input type="text" name="username_leetcode" value="" placeholder="Enter your username">
+                  {% comment %} {% for i in username %}
                   <span>{{i}}</span>
-                  {% endfor%}
+                  {% endfor%} {% endcomment %}
                 </p>
                 <p>Rank:
                   {% for j in response_leetcode %}
@@ -48,7 +49,8 @@
                 </p>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                <a href=""><button type="button" class="btn btn-primary" data-bs-dismiss="modal">Get Stats</button></a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
@@ -81,11 +83,14 @@
               </div>
               <div class="modal-body">
                 <p>Username: </p>
+                <input type="text" name="username_spoj" value="" placeholder="Enter your username">
+
                 <p>Rank: </p>
                 <p>Questions Solved: </p>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                <a href=""><button type="button" class="btn btn-primary" data-bs-dismiss="modal">Get Stats</button></a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
@@ -117,11 +122,14 @@
               </div>
               <div class="modal-body">
                 <p>Username: </p>
+                <input type="text" name="username_codeforces" value="" placeholder="Enter your username">
+
                 <p>Rank: </p>
                 <p>Questions Solved: </p>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                <a href=""><button type="button" class="btn btn-primary" data-bs-dismiss="modal">Get Stats</button></a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
@@ -154,11 +162,14 @@
               </div>
               <div class="modal-body">
                 <p>Username: </p>
+                <input type="text" name="username_atcoder" value="" placeholder="Enter your username">
+
                 <p>Rank: </p>
                 <p>Questions Solved: </p>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                <a href=""><button type="button" class="btn btn-primary" data-bs-dismiss="modal">Get Stats</button></a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
