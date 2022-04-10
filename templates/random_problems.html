@@ -3,7 +3,14 @@
 {% block title %} Random Problem {% endblock title %}
 
 {% block body %}
-
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show my-0" role="alert">
+    <strong> {{ message }}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+{% endif %}
 
 <div class="heading">
     <h1>Explore Problems Randomly</h1>
@@ -47,21 +54,45 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th data-row-selection="true"></th>
-                        <th tabindex="0" style="width: 80px; color: lightcoral; font-size: 20px; text-align: center;">Q-Id</th>
+
+                        <th tabindex="0" style="width: 80px; color: lightcoral; font-size: 20px; text-align: center;">
+                            Q-Id</th>
                         <th tabindex="0" style="font-size: 20px; color: lightcoral; text-align: center;">Questions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="selection-cell"><input type="checkbox" class=""></td>
-                        <td style="font-size: 20px; cursor: pointer; color: skyblue; text-align: center;">0</td>
-                        <td><a href="https://practice.geeksforgeeks.org/problems/reverse-an-array/0" target="_blank"
-                                rel="noopener noreferrer" class="question-link"
-                                style="font-weight: 600; color: skyblue; font-size: 20px;">Reverse the array</a>
+
+                        <td style="font-size: 20px; cursor: pointer; color: skyblue; text-align: center;">
+                            {% for m in responsedata.stat_status_pairs %}
+                            {% for j,l in m.stat.items%}
+                            {% if j == "question_id" %}
+                            <strong> {{ l }}</strong><br>
+                            {% endif %}
+                            {% endfor %}
+                            {% endfor%}
+                        </td>
+                        <td style="font-size: 20px; cursor: pointer; color: skyblue; ">
+                            {% for m in responsedata.stat_status_pairs %}
+                            {% for j,l in m.stat.items%}
+
+                            {% if j == "question__title" %}
+
+                            {% for k,n in m.stat.items%}
+                            {% if k == "question__title_slug" %}
+
+
+
+                            <strong> <a href="https://leetcode.com/problems/{{n}}/" target="__blank">{{ l }}</a></strong><br>
+                            {% endif %}
+                            {% endfor %}
+                            {% endif%}
+
+                            {% endfor %}
+                            {% endfor %}
                         </td>
                     </tr>
-                    
+
                 </tbody>
             </table>
         </div>
@@ -73,21 +104,23 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th data-row-selection="true"></th>
-                        <th tabindex="0" style="width: 80px; color: lightcoral; font-size: 20px; text-align: center;">Q-Id</th>
+
+                        <th tabindex="0" style="width: 80px; color: lightcoral; font-size: 20px; text-align: center;">
+                            Q-Id</th>
                         <th tabindex="0" style="font-size: 20px; color: lightcoral; text-align: center;">Questions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="selection-cell"><input type="checkbox" class=""></td>
-                        <td style="font-size: 20px; cursor: pointer; color: skyblue; text-align: center;">0</td>
-                        <td><a href="https://practice.geeksforgeeks.org/problems/reverse-an-array/0" target="_blank"
-                                rel="noopener noreferrer" class="question-link"
-                                style="font-weight: 600; color: skyblue; font-size: 20px;">Reverse the array</a>
+
+                        <td style="font-size: 20px; cursor: pointer; color: skyblue; text-align: center;">
+                            
+                        </td>
+                        <td style="font-size: 20px; cursor: pointer; color: skyblue; ">
+                            
                         </td>
                     </tr>
-                    
+
                 </tbody>
             </table>
 
@@ -103,21 +136,37 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th data-row-selection="true"></th>
-                        <th tabindex="0" style="width: 80px; color: lightcoral; font-size: 20px; text-align: center;">Q-Id</th>
+                        <th tabindex="0" style="width: 80px; color: lightcoral; font-size: 20px; text-align: center;">
+                            Q-Id</th>
                         <th tabindex="0" style="font-size: 20px; color: lightcoral; text-align: center;">Questions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="selection-cell"><input type="checkbox" class=""></td>
-                        <td style="font-size: 20px; cursor: pointer; color: skyblue; text-align: center;">0</td>
-                        <td><a href="https://practice.geeksforgeeks.org/problems/reverse-an-array/0" target="_blank"
-                                rel="noopener noreferrer" class="question-link"
-                                style="font-weight: 600; color: skyblue; font-size: 20px;">Reverse the array</a>
+
+                        <td style="font-size: 20px; cursor: pointer; color: skyblue; text-align: center;">
+                            {% for i in codeforces_problems %}
+                            {% for j in i.result.problems %}
+
+                            <strong> {{j.contestId}} </strong>
+                            <br>
+                            {%endfor%}
+                            {% endfor %}
+                        </td>
+                        <td style="font-size: 20px; cursor: pointer; color: skyblue; ">
+                            {% for i in codeforces_problems %}
+                            {% for j in i.result.problems %}
+
+
+                            <strong> <a href="https://codeforces.com/problemset/problem/{{j.contestId}}/{{j.index}}"
+                                    target="__blank">{{j.name}} </a></strong>
+                            <br>
+
+                            {%endfor%}
+                            {% endfor %}
                         </td>
                     </tr>
-                    
+
                 </tbody>
             </table>
         </div>
@@ -129,21 +178,35 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th data-row-selection="true"></th>
-                        <th tabindex="0" style="width: 80px; color: lightcoral; font-size: 20px; text-align: center;">Q-Id</th>
+
+                        <th tabindex="0" style="width: 80px; color: lightcoral; font-size: 20px; text-align: center;">
+                            Q-Id</th>
                         <th tabindex="0" style="font-size: 20px; color: lightcoral; text-align: center;">Questions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="selection-cell"><input type="checkbox" class=""></td>
-                        <td style="font-size: 20px; cursor: pointer; color: skyblue; text-align: center;">0</td>
-                        <td><a href="https://practice.geeksforgeeks.org/problems/reverse-an-array/0" target="_blank"
-                                rel="noopener noreferrer" class="question-link"
-                                style="font-weight: 600; color: skyblue; font-size: 20px;">Reverse the array</a>
+
+                        <td style="font-size: 20px; cursor: pointer; color: skyblue; ">
+                            {% for i in atcoder_problems %}
+
+                            <strong> {{i.id}} </strong>
+                            <br>
+                            {% endfor %}
+                        </td>
+                        <td style="font-size: 20px; cursor: pointer; color: skyblue; ">
+                            {% for i in atcoder_problems %}
+
+                           
+                            <strong> <a href="https://atcoder.jp/contests/{{i.contest_id}}/tasks/{{i.id}}" target="__blank">{{i.title}}
+                                </a></strong>
+
+                            <br>
+
+                            {% endfor %}
                         </td>
                     </tr>
-                    
+
                 </tbody>
             </table>
         </div>
@@ -161,7 +224,8 @@
     }
 
     @import url(https://fonts.googleapis.com/css?family=Roboto);
-    .card{
+
+    .card {
         background-color: #000000;
         border-radius: 2px;
         box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -170,9 +234,11 @@
         width: 100%;
         font-family: 'Roboto', sans-serif;
     }
-    a{
+
+    a {
         text-decoration: none;
     }
+
     body {
         /* height: 100%; */
         background: black;
@@ -317,35 +383,10 @@
 
 
 
-<!-- {% if messages %}
-{% for message in messages %}
-<div class="alert alert-{{ message.tags }} alert-dismissible fade show my-0" role="alert">
-    <strong> {{ message }}</strong>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-{% endfor %}
-{% endif %}
 
 
-{% for m in responsedata.stat_status_pairs %}
-{% for j,l in m.stat.items%}
-    {% if j == "question_id" %}
-        <strong> {{ l }}</strong>
-    {% endif %}
-    {% if j == "question__title"  %}
 
-    {% for k,n in m.stat.items%}
-    {% if k == "question__title_slug" %}
-    
-    
-    
-        <strong> <a href="https://leetcode.com/problems/{{n}}/" target="__blank">{{ l }}</a></strong><br>
-        {% endif %}
-        {% endfor %}
-    {% endif%}
 
-{% endfor %}
-{% endfor %}
 
 
 {% comment %} {% for i in codeforces_problems %}
@@ -353,26 +394,28 @@
 {% for j in i.result.problems %}
 <strong> {{j.contestId}} </strong>
 
-<strong> <a href="https://codeforces.com/problemset/problem/{{j.contestId}}/{{j.index}}" target="__blank">{{j.name}} </a></strong>
+<strong> <a href="https://codeforces.com/problemset/problem/{{j.contestId}}/{{j.index}}" target="__blank">{{j.name}}
+    </a></strong>
 <strong> {{j.type}} </strong>
 <br>
 
 {%endfor%}
-{% endfor %}  {% endcomment %}
+{% endfor %} {% endcomment %}
 
 
- {% comment %} {% for i in atcoder_problems %}
+{% comment %} {% for i in atcoder_problems %}
 
 <strong> {{i.id}} </strong>
 <strong> {{i.contest_id}} </strong>
-<strong> <a href="https://atcoder.jp/contests/{{i.contest_id}}/tasks/{{i.id}}" target="__blank">{{i.title}} </a></strong>
+<strong> <a href="https://atcoder.jp/contests/{{i.contest_id}}/tasks/{{i.id}}" target="__blank">{{i.title}}
+    </a></strong>
 
 <br>
 
-{% endfor %}  {% endcomment %}
+{% endfor %}
 
 
 
-{% endfor %} -->
+{% endfor %} {% endcomment %}
 
 {% endblock body %}

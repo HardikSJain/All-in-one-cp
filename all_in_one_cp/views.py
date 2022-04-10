@@ -80,12 +80,19 @@ def profile(request):
 
 def leetcode(request):
     username = get_user(request)
-    l_username = platform_details.objects.raw(
-        'select Leetcode_username from all_in_one_cp_platform_details where username= %s ', [username])
-    for p in l_username:
-        leetcode_username = p.Leetcode_username
+    # for p in platform_details.objects.raw('select Leetcode_username from all_in_one_cp_platform_details where username= %s ', [username]):
+    #     leetcode_username = p
+
+    # print(leetcode_username)
+    # l_username = platform_details.objects.raw(
+    #     'select Leetcode_username from all_in_one_cp_platform_details where username= %s ', [username])
+
+    # for p in l_username:
+    #     leetcode_username = p.Leetcode_username
+
     response = requests.get(
-        f"https://competitive-coding-api.herokuapp.com/api/leetcode/{leetcode_username}").json()
+        f'https://competitive-coding-api.herokuapp.com/api/leetcode/paarthsoni').json()
+    print(response)
     return redirect(request, '/profile', {'response_leetcode': response})
 
 
@@ -136,23 +143,16 @@ def atcoder(request):
 def explore_problems(request):
     responsedata = requests.get(
         "https://leetcode.com/api/problems/algorithms/").json()
-    return render(request, 'random_problems.html', {'responsedata': responsedata})
 
-
-def explore_problems_codeforces(request):
-    response = requests.get(
+    response1 = requests.get(
         "https://codeforces.com/api/problemset.problems?tags=implementation").json()
     list2 = []
-    list2.append(response)
-    return render(request, 'random_problems.html', {'codeforces_problems': list2})
+    list2.append(response1)
 
-
-def explore_problems_atcoder(request):
-    response = requests.get(
+    response2 = requests.get(
         "https://kenkoooo.com/atcoder/resources/problems.json").json()
-    # list3 = []
-    # list3.append(response)
-    return render(request, 'random_problems.html', {'atcoder_problems': response})
+
+    return render(request, 'random_problems.html', {'responsedata': responsedata, 'codeforces_problems': list2, 'atcoder_problems': response2})
 
 
 def daily_coding(request):
