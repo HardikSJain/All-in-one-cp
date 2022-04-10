@@ -92,8 +92,10 @@ def leetcode(request):
 
     response = requests.get(
         f'https://competitive-coding-api.herokuapp.com/api/leetcode/paarthsoni').json()
-    print(response)
-    return redirect(request, '/profile', {'response_leetcode': response})
+    list1 = []
+    list1.append(response)
+    print(list1)
+    return redirect(request, '/profile', {'response_leetcode': list1})
 
 
 def codeforces(request):
