@@ -7,55 +7,101 @@
   
   <div class="row1-container">
     <div class="box box-down cyan">
+      <form method="post" action="/leetcode">
+        {% csrf_token %}
       <h2>LeetCode</h2>
+
       <input type="text" name="username_leetcode" value="" placeholder="Enter your username">
       <br>
       <br>
-      <p>Rank: </p>
-      <p>Questions Solved</p>
+      <p>Rank:
+        {% for i in response_leetcode%}
+        <strong>{{i.ranking}}</strong>
+        {% endfor %}
+         </p>
+      <p>Questions Solved:
+        {% for j in response_leetcode%}
+        <strong>{{j.total_problems_solved}}</strong>
+        {% endfor %}
+      </p>
 
+    
 
-      <a href=""><button type="button" class="btn btn-primary" data-bs-dismiss="modal">Get Stats</button></a>
+    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Get Stats</button>
+    </form>
       <img src="https://assets.codepen.io/2301174/icon-supervisor.svg" alt="">
     </div>
 
     <div class="box red">
+      <form method="post" action="/atcoder">
+        {% csrf_token %}
       <h2>AtCoder</h2>
       <input type="text" name="username_atcoder" value="" placeholder="Enter your username">
       <br>
       <br>
-      <p>Rank: </p>
-      <p>Questions Solved</p>
+      <p>Rank: 
+        {% for i in response_atcoder%}
+        <strong>{{i.rank}}</strong>
+        {% endfor %}
+      </p>
+      <p>Level:
+        {% for j in response_atcoder%}
+        <strong>{{j.level}}</strong>
+        {% endfor %}
+      </p>
 
 
-      <a href=""><button type="button" class="btn btn-primary" data-bs-dismiss="modal">Get Stats</button></a>
+      <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Get Stats</button>
+    </form>
       <img src="https://assets.codepen.io/2301174/icon-team-builder.svg" alt="">
     </div>
 
     <div class="box box-down blue">
+      <form method="post" action="/SPOJ">
+        {% csrf_token %}
       <h2>SPOJ</h2>
       <input type="text" name="username_spoj" value="" placeholder="Enter your username">
       <br>
       <br>
-      <p>Rank: </p>
-      <p>Questions Solved</p>
+      <p>Rank: 
+        {% for i in response_spoj%}
+        <strong>{{i.rank}}</strong>
+        {% endfor %}
+      </p>
+      <p>Points:
+        {% for j in response_spoj%}
+        <strong>{{j.points}}</strong>
+        {% endfor %}
+      </p>
 
 
-      <a href=""><button type="button" class="btn btn-primary" data-bs-dismiss="modal">Get Stats</button></a>
+      <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Get Stats</button>
+    </form>
       <img src="https://assets.codepen.io/2301174/icon-calculator.svg" alt="">
     </div>
   </div>
   <div class="row2-container">
     <div class="box orange">
+      <form method="post" action="/codeforces">
+        {% csrf_token %}
       <h2>CodeForces</h2>
       <input type="text" name="username_codeforces" value="" placeholder="Enter your username">
       <br>
       <br>
-      <p>Rank: </p>
-      <p>Questions Solved</p>
+      <p>Rank: 
+        {% for i in response_codeforces%}
+        <strong>{{i.rank}}</strong>
+        {% endfor %}
+      </p>
+      <p>Contests:
+        {% for j in response_codeforces%}
+        <strong>{{j.contests}}</strong>
+        {% endfor %}
+      </p>
 
 
-      <a href=""><button type="button" class="btn btn-primary" data-bs-dismiss="modal">Get Stats</button></a>
+      <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Get Stats</button>
+    </form>
       <img src="https://assets.codepen.io/2301174/icon-karma.svg" alt="">
     </div>
   </div>
@@ -64,6 +110,9 @@
 
 
 <style>
+  input, textarea {
+    background-color: rgba(255,255,255,.75);
+  }
   :root {
     --red: hsl(0, 78%, 62%);
     --cyan: hsl(180, 62%, 55%);

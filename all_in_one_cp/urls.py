@@ -12,7 +12,7 @@ urlpatterns = [
     path('leetcode', views.leetcode, name="leetocde_stats"),
     path('codeforces', views.codeforces, name="codeforces_stats"),
     path('SPOJ', views.SPOJ, name="spoj_stats"),
-    path('interviewbit', views.interviewbit, name="interviewbit_stats"),
+
     path('atcoder', views.atcoder, name="atcoder_stats"),
     path('explore_problems', views.explore_problems, name="problems"),
     path('daily_coding', views.daily_coding, name="daily_coding"),

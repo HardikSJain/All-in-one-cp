@@ -80,6 +80,7 @@ def profile(request):
 
 def leetcode(request):
     leetcode_username = request.POST.get("username_leetcode")
+
     response = requests.get(
         f'https://competitive-coding-api.herokuapp.com/api/leetcode/{leetcode_username}').json()
     list1 = []
@@ -89,43 +90,37 @@ def leetcode(request):
 
 
 def codeforces(request):
-    codeforces_username = request.POST.get("username_leetcode")
+    codeforces_username = request.POST.get("username_codeforces")
+    print(codeforces_username)
+
+    response = requests.get(
+        f"https://competitive-coding-api.herokuapp.com/api/codeforces/{codeforces_username}").json()
     list1 = []
     list1.append(response)
     print(list1)
-    response = requests.get(
-        f"https://competitive-coding-api.herokuapp.com/api/codeforces/{codeforces_username}").json()
-    return redirect(request, '/profile', {'response_codeforces': response})
+    return render(request, 'profile.html', {'response_codeforces': list1})
 
 
 def SPOJ(request):
-    spoj_username = request.POST.get("username_leetcode")
-    list1 = []
-    list1.append(response)
-    print(list1)
+    spoj_username = request.POST.get("username_spoj")
+
     response = requests.get(
         f"https://competitive-coding-api.herokuapp.com/api/spoj/{spoj_username}").json()
-    return redirect(request, '/profile', {'response_spoj': response})
-
-
-def interviewbit(request):
-    interviewbit_username = request.POST.get("username_leetcode")
     list1 = []
     list1.append(response)
     print(list1)
-    response = requests.get(
-        f"https://competitive-coding-api.herokuapp.com/api/interviewbit/{interviewbit_username}").json()
-    return redirect(request, '/profile', {'response_interviewbit': response})
+    return render(request, 'profile.html', {'response_spoj': list1})
 
 
 def atcoder(request):
-    atcoder_username = request.POST.get("username_leetcode")
+    atcoder_username = request.POST.get("username_atcoder")
+
+    response = requests.get(
+        f"https://competitive-coding-api.herokuapp.com/api/atcoder/{atcoder_username}").json()
     list1 = []
     list1.append(response)
     print(list1)
-    response = requests.get(
-        f"https://competitive-coding-api.herokuapp.com/api/atcoder/{atcoder_username}").json()
-    return redirect(request, '/profile', {'response_atcoder': response})
+    return render(request, 'profile.html', {'response_atcoder': list1})
 
 
 def explore_problems(request):
