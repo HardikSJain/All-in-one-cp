@@ -4,226 +4,200 @@
 
 {% block body %}
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
+  
+  <div class="row1-container">
+    <div class="box box-down cyan">
+      <h2>LeetCode</h2>
+      <input type="text" name="username_leetcode" value="" placeholder="Enter your username">
+      <br>
+      <br>
+      <p>Rank: </p>
+      <p>Questions Solved</p>
 
-      <div class="card1">
-        <!-- Button trigger modal -->
-        <a href="/leetcode">
-        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          
-          <div class="card" style="width: 18rem;">
-            <img src="https://jooncco.com/public/images/leetcode-logo.jpeg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Leet Code</h5>
-            </div>
-          </div>
-        </a>
-        </button>
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Leet Code</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <p>Username:
-                  <input type="text" name="username_leetcode" value="" placeholder="Enter your username">
-                  {% comment %} {% for i in username %}
-                  <span>{{i}}</span>
-                  {% endfor%} {% endcomment %}
-                </p>
-                <p>Rank:
-                  {% for j in response_leetcode %}
-                  <span>{{j.ranking}}}</span>
-                  {% endfor%}
-                </p>
-                <p>Questions Solved:
-                  {% for k in response_leetcode %}
-                  <span>{{k.total_problems_solved}}}</span>
-                  {% endfor%}
-                </p>
-              </div>
-              <div class="modal-footer">
-                <a href=""><button type="button" class="btn btn-primary" data-bs-dismiss="modal">Get Stats</button></a>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <a href=""><button type="button" class="btn btn-primary" data-bs-dismiss="modal">Get Stats</button></a>
+      <img src="https://assets.codepen.io/2301174/icon-supervisor.svg" alt="">
     </div>
-    <div class="col-sm">
 
-      <div class="card2">
-        <!-- Button trigger modal -->
-        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          <div class="card" style="width: 18rem;">
-            <img
-              src="https://1.bp.blogspot.com/-0lmvNtw3oIo/YJ0O38KKcMI/AAAAAAAAAXM/0JuvLfQMRmQQeIgOoGL4S2Vi8yx2xQUuACPcBGAYYCw/s1024/SPOJ%2BSOLUTIONS%2B%25282%2529.png"
-              class="card-img-top" alt="..." style="height:160px">
-            <div class="card-body">
-              <h5 class="card-title">SPOJ</h5>
-            </div>
-          </div>
-        </button>
+    <div class="box red">
+      <h2>AtCoder</h2>
+      <input type="text" name="username_atcoder" value="" placeholder="Enter your username">
+      <br>
+      <br>
+      <p>Rank: </p>
+      <p>Questions Solved</p>
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">SPOJ</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <p>Username: </p>
-                <input type="text" name="username_spoj" value="" placeholder="Enter your username">
 
-                <p>Rank: </p>
-                <p>Questions Solved: </p>
-              </div>
-              <div class="modal-footer">
-                <a href=""><button type="button" class="btn btn-primary" data-bs-dismiss="modal">Get Stats</button></a>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <a href=""><button type="button" class="btn btn-primary" data-bs-dismiss="modal">Get Stats</button></a>
+      <img src="https://assets.codepen.io/2301174/icon-team-builder.svg" alt="">
     </div>
-    <div class="col-sm">
 
-      <div class="card3">
-        <!-- Button trigger modal -->
-        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          <div class="card" style="width: 18rem;">
-            <img src="https://codeforces.com/predownloaded/54/8a/548a369b1a954b2f7f9133072a025435c8667aac.png"
-              class="card-img-top" alt="..." style="height: 155px;">
-            <div class="card-body">
-              <h5 class="card-title">Codeforces</h5>
-            </div>
-          </div>
-        </button>
+    <div class="box box-down blue">
+      <h2>SPOJ</h2>
+      <input type="text" name="username_spoj" value="" placeholder="Enter your username">
+      <br>
+      <br>
+      <p>Rank: </p>
+      <p>Questions Solved</p>
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Codeforces</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <p>Username: </p>
-                <input type="text" name="username_codeforces" value="" placeholder="Enter your username">
 
-                <p>Rank: </p>
-                <p>Questions Solved: </p>
-              </div>
-              <div class="modal-footer">
-                <a href=""><button type="button" class="btn btn-primary" data-bs-dismiss="modal">Get Stats</button></a>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="col-sm">
-
-      <div class="card4">
-        <!-- Button trigger modal -->
-        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          <div class="card" style="width: 18rem;">
-            <img
-              src="https://prtimes.jp/data/corp/28415/ogp/tmp-cc1239d88d742358fce1f04454163d23-3dd0d11b1c3f08e6e13035f6e3e0961b.jpg"
-              class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Atcoder</h5>
-            </div>
-          </div>
-        </button>
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Atcoder</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <p>Username: </p>
-                <input type="text" name="username_atcoder" value="" placeholder="Enter your username">
-
-                <p>Rank: </p>
-                <p>Questions Solved: </p>
-              </div>
-              <div class="modal-footer">
-                <a href=""><button type="button" class="btn btn-primary" data-bs-dismiss="modal">Get Stats</button></a>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <a href=""><button type="button" class="btn btn-primary" data-bs-dismiss="modal">Get Stats</button></a>
+      <img src="https://assets.codepen.io/2301174/icon-calculator.svg" alt="">
     </div>
   </div>
-</div>
+  <div class="row2-container">
+    <div class="box orange">
+      <h2>CodeForces</h2>
+      <input type="text" name="username_codeforces" value="" placeholder="Enter your username">
+      <br>
+      <br>
+      <p>Rank: </p>
+      <p>Questions Solved</p>
+
+
+      <a href=""><button type="button" class="btn btn-primary" data-bs-dismiss="modal">Get Stats</button></a>
+      <img src="https://assets.codepen.io/2301174/icon-karma.svg" alt="">
+    </div>
+  </div>
+  
+
+
 
 <style>
-  body {
+  :root {
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    --varyDarkBlue: skyblue;
+    --grayishBlue: hsl(229, 6%, 66%);
+    --veryLightGray: hsl(0, 0%, 98%);
+    --weight1: 200;
+    --weight2: 400;
+    --weight3: 600;
+}
+
+body {
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
     background-image: linear-gradient(to right, rgb(58, 54, 54), black);
-  }
+}
 
-  .card1 {
-    margin-top: 50px;
-    background-color: rgba(0, 0, 0, 0);
-    padding-left: 40px;
-  }
+.attribution { 
+    font-size: 11px; text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
 
-  .card2 {
-    margin-top: 50px;
-    background-color: rgba(0, 0, 0, 0);
-    padding-left: 40px;
-  }
+h1:first-of-type {
+    font-weight: var(--weight1);
+    color: var(--varyDarkBlue);
 
-  .card3 {
-    margin-top: 50px;
-    background-color: rgba(0, 0, 0, 0);
-    padding-left: 40px;
-  }
+}
 
-  .card4 {
-    margin-top: 50px;
-    background-color: rgba(0, 0, 0, 0);
-    padding-left: 480px;
-  }
+h1:last-of-type {
+    color: var(--varyDarkBlue);
+}
 
-  .card1:hover {
-    cursor: pointer;
-  }
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+}
 
-  .card2:hover {
-    cursor: pointer;
-  }
+.header {
+    text-align: center;
+    line-height: 0.8;
+    margin-bottom: 50px;
+    margin-top: 100px;
+}
 
-  .card3:hover {
-    cursor: pointer;
-  }
+.header p {
+    margin: 0 auto;
+    line-height: 2;
+    color: var(--grayishBlue);
+}
 
-  .card4:hover {
-    cursor: pointer;
-  }
+
+.box p {
+    color: var(--grayishBlue);
+}
+
+.box {
+    border-radius: 5px;
+    box-shadow: 0px 30px 40px -20px var(--grayishBlue);
+    padding: 30px;
+    margin: 20px;  
+}
+
+img {
+    float: right;
+}
+
+@media (max-width: 450px) {
+    .box {
+        height: 200px;
+    }
+}
+
+@media (max-width: 950px) and (min-width: 450px) {
+    .box {
+        text-align: center;
+        height: 180px;
+    }
+}
+
+.cyan {
+    border-top: 3px solid var(--cyan);
+}
+.red {
+    border-top: 3px solid var(--red);
+}
+.blue {
+    border-top: 3px solid var(--blue);
+}
+.orange {
+    border-top: 3px solid var(--orange);
+}
+
+h2 {
+    color: var(--varyDarkBlue);
+    font-weight: var(--weight3);
+}
+
+
+@media (min-width: 950px) {
+    .row1-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .row2-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .box-down {
+        position: relative;
+        top: 150px;
+    }
+    .box {
+        width: 20%;
+     
+    }
+    .header p {
+        width: 30%;
+    }
+    
+}
 </style>
+
+
+
+
+
+
 
 {% endblock body %}
